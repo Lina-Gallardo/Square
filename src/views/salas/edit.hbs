@@ -1,0 +1,19 @@
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <form action="/salas/edit/{{sala.id_sala}}" method="POST">
+            <div class="form-group m-3">
+              <input value="{{sala.bloque_sala}}" type="text" class="form-control my-3" name="bloque_sala" placeholder="Bloque" autofocus>
+              <input value="{{sala.piso_sala}}" type="text" class="form-control my-3" name="piso_sala" placeholder="Piso">
+              <input value="{{sala.aula_sala}}" type="text" class="form-control my-3" name="aula_sala" placeholder="Aula">
+              <input value="{{sala.cantidad_equipos_sala}}" type="text" class="form-control my-3" name="cantidad_equipos_sala" placeholder="Cantidad de quipos">
+              <button class="btn btn-outline-success">Guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container p-4">
+  <div class="row">
+    {{#each salas}}
+      <div class="col-md-3">
+        <div class="card text-center">
+          <div class="card-body">
+            <a href="#">
+              <h3 class="card-title text-uppercase">bloque {{bloque_sala}}</h3>
+            </a>
+            <p>piso {{piso_sala}}</p>
+            <p>Aula {{aula_sala}}</p>
+            <a href="/salas/equipos/{{id_sala}}">cantidad de equipos {{cantidad_equipos_sala}}</a>
+            <p>Equipos reservados {{total_equipos_reservados}}</p>
+            <a href="/salas/delete/{{id_sala}}" class="btn btn-danger" >Eliminar</a>
+            <a href="/salas/edit/{{id_sala}}" class="btn btn-success" >Editar</a>
+          </div>
+        </div>
+      </div>
+    {{else}}
+      <div class="col-md-4 mx-auto">
+        <div class="card card-body text-center">
+          <p>No se encuentras salas registradas en este momento.</p>
+          <a href="/salas/add">Por favor ingresa una sala</a>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
