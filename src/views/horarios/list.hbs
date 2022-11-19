@@ -1,0 +1,36 @@
+<div class="container p-4">
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Bloque</th>
+          <th scope="col">Piso</th>
+          <th scope="col">Aula</th>
+          <th scope="col">Docente</th>
+          <th scope="col">Día</th>
+          <th scope="col">Hora de inicio</th>
+          <th scope="col">Hora de finalización</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each datos}}
+        <tr>
+          <td>{{bloque_sala}}</td>
+          <td>{{piso_sala}}</td>
+          <td>{{aula_sala}}</td>
+          <td>{{name_user}}</td>
+          <td>{{semana dia_semana}}</td>
+          <td>{{hora_inicio}}</td>
+          <td>{{hora_fin}}</td>
+          <td>
+            <!-- <div class="btn-group"> -->
+              <a class="btn btn-primary" href="#">Editar</a>
+              <a class="btn btn-danger" href="/horarios/delete/{{id_horario}}">Eliminar</a>
+            <!-- </div> -->
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

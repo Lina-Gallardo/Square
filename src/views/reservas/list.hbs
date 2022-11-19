@@ -5,17 +5,21 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Nombre</th>
-          <th scope="col">Correo</th>
-          <th scope="col">Role</th>
+          <th scope="col">Equipo</th>
+          <th scope="col">ID sala</th>
+          <th scope="col">Fecha de reserva</th>
+          <th scope="col">Hora de reserva</th>
         </tr>
       </thead>
       <tbody>
-        {{#each usuarios}}
+        {{#each reservas}}
         <tr>
           <th scope="row">{{id_user}}</th>
           <td>{{name_user}}</td>
-          <td>{{email_user}}</td>
-          <td>{{role_user}}</td>
+          <td>{{id_equipo}}</td>
+          <td>{{id_sala}}</td>
+          <td>{{fecha_reserva}}</td>
+          <td>{{hora_reserva}}</td>
         </tr>
         {{/each}}
       </tbody>
