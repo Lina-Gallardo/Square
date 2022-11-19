@@ -7,9 +7,11 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <ul class="navbar-nav">
         {{#if user}}
-          <li class="nav-item"><a class="nav-link" href="/salas"> Salas</a></li>
-          <li class="nav-item"><a class="nav-link" href="/salas/add"> Crear Salas</a></li>
-          <li class="nav-item"><a class="nav-link" href="/perfil"> Perfil</a></li>
+          {{#if (condition user)}}
+            {{>admin}}
+          {{else}}
+            {{>estudent}}
+          {{/if}}
           <li class="nav-item"><a class="nav-link" href="/logout"> Cerrar sesion</a></li>
         {{else}}
           <li class="nav-item"><a class="nav-link" href="/login"> Iniciar sesion</a></li>

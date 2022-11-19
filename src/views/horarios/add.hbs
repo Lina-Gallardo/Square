@@ -1,0 +1,48 @@
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="card">
+        <div class="card-header">
+          <h2>Registro de horarios</h2>
+        </div>
+        <div class="card-body">
+          <form action="/horarios/add" method="POST">
+            <div class="form-group m-3">
+              <div id="boxsala">
+                <select id="sala" class="form-select my-3" name="id_sala" autofocus>
+                  <option selected>Seleccione una sala</option>
+                  {{#each salas}}
+                    <option value={{id_sala}}>Bloque: {{bloque_sala}} - Piso: {{piso_sala}} - Aula: {{aula_sala}}</option>
+                  {{/each}}
+                </select>
+              </div>
+              <div id="boxuser">
+                <select id="user" class="form-select my-3" name="id_user">
+                  <option selected>Seleccione un usuario</option>
+                  {{#each usuarios}}
+                    <option value={{id_user}}>{{name_user}}</option>
+                  {{/each}}
+                </select>
+              </div>
+              <div id="boxdia">
+                <select id="dia" class="form-select my-3" name="dia_semana">
+                  <option selected>Seleccione un día de la semana</option>
+                  <option value=1>Lunes</option>
+                  <option value=2>Martes</option>
+                  <option value=3>Miercoles</option>
+                  <option value=4>Jueves</option>
+                  <option value=5>Viernes</option>
+                  <option value=6>Sabado</option>
+                </select>
+              </div>
+              <!-- <input class="form-control" type="number" min="1" max="3" name="total_hora" placeholder="Ingrese el total de horas"> -->
+              <input type="time" class="form-control my-3" name="hora_inicio">
+              <input type="time" class="form-control my-3" name="hora_fin">
+              <button class="btn btn-outline-success">Guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

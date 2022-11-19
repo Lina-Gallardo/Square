@@ -49,6 +49,9 @@ app.use((req, res, next)=>{
 app.use(require('./routes'));
 app.use(require('./routes/autenticacion'));
 app.use('/salas', require('./routes/salas'));
+app.use('/horarios', require('./routes/horarios'));
+app.use('/reservas', require('./routes/reservas'));
+app.use('/equipos', require('./routes/equipos'));
 
 //Archivos publicos
 app.use(express.static(path.join(__dirname, 'public')));
