@@ -36,8 +36,18 @@
                 </select>
               </div>
               <!-- <input class="form-control" type="number" min="1" max="3" name="total_hora" placeholder="Ingrese el total de horas"> -->
-              <input type="time" class="form-control my-3" name="hora_inicio">
-              <input type="time" class="form-control my-3" name="hora_fin">
+              <label for="inicio">Selesccione la hora de inicio</label>
+              <select id="inicio" class="form-select my-3" name="hora_inicio">
+                {{#formatoHoras horario}}
+                {{/formatoHoras }}
+              </select>
+              <label for="fin">Seleccione la hora de finalización</label>
+              <select id="fin" class="form-select my-3" name="hora_fin">
+                {{#formatoHoras horario}}
+                {{/formatoHoras }}
+              </select>
+              <!-- <input type="time" class="form-control my-3" name="hora_inicio">
+              <input type="time" class="form-control my-3" name="hora_fin"> -->
               <button class="btn btn-outline-success">Guardar</button>
             </div>
           </form>

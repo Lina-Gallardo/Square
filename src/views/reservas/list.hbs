@@ -3,11 +3,12 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">Identificación</th>
           <th scope="col">Nombre</th>
           <th scope="col">Equipo</th>
-          <th scope="col">ID sala</th>
+          <th scope="col">Sala</th>
           <th scope="col">Fecha de reserva</th>
+          <th scope="col">Hora de reserva</th>
           <th scope="col">Hora de reserva</th>
         </tr>
       </thead>
@@ -18,8 +19,9 @@
           <td>{{name_user}}</td>
           <td>{{id_equipo}}</td>
           <td>{{id_sala}}</td>
-          <td>{{fecha_reserva}}</td>
+          <td>{{timeago fecha_reserva}}</td>
           <td>{{hora_reserva}}</td>
+          <td>{{hora_final}}</td>
         </tr>
         {{/each}}
       </tbody>

@@ -22,14 +22,19 @@
               {{else}}
                 <p>Reservado por: {{user.name_user}}</p>
               {{/if}}
-              <label for="floatingHinicio">Día de reserva</label>
-              <input id="floatingHinicio" value="{{dateDay}}" type="text" class="form-control my-3" name="fecha_reserva" readonly>
-              <label for="floatingHfinal">Hora de la reserva</label>
-              <select id='hora' class='form-select my-3' name='hora_reserva'>
-                {{#formatoHoras horario}}
-                {{/formatoHoras}}
+              <label for="floatingFecha">Día de reserva</label>
+              <input id="floatingFecha" value="{{dateDay}}" type="text" class="form-control my-3" name="fecha_reserva" readonly>
+              <label for="floatingHInicial">Hora de la reserva</label>
+              <select id='floatingHInicial' class='form-select my-3' name='hora_reserva' readonly>
+                <option value="{{hora_reserva}}">{{hora_reserva}}</option>
+              </select>
+              <label for="floatingHfinal">Hora de finalización</label>
+              <select id='floatingHfinal' class='form-select my-3' name='hora_final'>
+                {{#formatoHoras (horaSeleccionada hora_reserva horario)}}
+                {{/formatoHoras }}
               </select>
               <button class="btn btn-outline-success">Guardar</button>
+              <a class="btn btn-outline-danger" href="/equipos/list/{{sala.id_sala}}/{{hora_reserva}}">cancelar</a>
             </div>
           </form>
         </div>

@@ -9,11 +9,6 @@ let form;
 router.get('/signup', isLoggedIn, isRoleAdmin, (req,res)=>{
   res.render('auth/signup');
 });
-// router.post('/signup', isLoggedIn, isRoleAdmin, passport.authenticate('local.signup',{
-//   successRedirect: '/perfil',
-//   failureRedirect: '/signup',
-//   failureFlash: true
-// }));
 router.post('/signup', isLoggedIn, isRoleAdmin, async(req, res)=>{
   const {id_user, name_user, email_user, password_user, role_user} = req.body;
   const newUser = {id_user, name_user, email_user, password_user, role_user};
@@ -35,7 +30,7 @@ router.get('/login', isNotLoggedIn, (req,res)=>{
 });
 router.post('/login', isNotLoggedIn, (req,res, next)=>{
   passport.authenticate('local.login',{
-    successRedirect: '/perfil',
+    successRedirect: '/',
     failureRedirect: '/login',
     failureFlash: true
   })(req, res, next);

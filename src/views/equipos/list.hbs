@@ -1,10 +1,11 @@
 <div class="container p-4">
   <div class="row">
     <div class="">
-      <form action="/equipos/list/{{id_sala}}/" method="POST">
+      <form action="/equipos/list/{{id_sala}}" method="POST">
         <div class="form-group m-3">
           <select class="form-select my-3" name="hora_reserva">
-            {{#formatoHoras horario}}
+            <option selected>{{hora_reserva}}</option>
+            {{#formatoHoras (horaActual horario)}}
             {{/formatoHoras}}
           </select>
           <button class="btn btn-outline-success">Filtrar</button>
@@ -20,7 +21,8 @@
             </a>
             {{#if disponibilidad_equipo}}
             <p> Equipo dispobible</p>
-            <a href="/reservas/add/{{id_sala}}/{{id_equipo}}">Reservar equipo</a>
+            <p>{{hora_reserva}}</p>
+            <a href="/reservas/add/{{id_sala}}/{{id_equipo}}/{{hora_reserva}}">Reservar equipo</a>
             {{else}}
             <p> Equipo reservado</p>
             {{/if}}

@@ -1,0 +1,66 @@
+.container-btn, .button, .nav{
+  position: absolute;
+}
+
+.container-btn{
+  margin: auto;
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  /* line-height: 55px; */
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+}
+#toggle{
+  display: none;
+}
+.button{
+  z-index: 999;
+  width: 43px;
+  height: 43px;
+  background: rgb(59, 57, 57);
+  border-radius:100%;
+  transition: all 0.5s ease-in-out;
+  box-shadow:1px 3px 10px 0 rgba(0,0,0,0.3);
+  cursor:pointer;
+  color: rgb(237, 206, 42);
+  font-size: 33px;
+}
+.nav{
+  transform: translateY(20%);
+  opacity: 0;
+  top: 13px;
+  left: -40px;
+  transition: all 0.5s ease-in-out;
+  background: white;
+  width: 120px;
+  border-radius: 5px;
+  transform: translateY(0%);
+  box-shadow: 2px 3px 10px 0 rgba(0,0,0,0.1);
+}
+.nav a{
+  text-align: center;
+  display: block;
+  color: rgb(14, 15, 18);
+  /* margin: 20px 0; */
+  text-decoration: none;
+  font-family: "Helvetica Neue";
+  /* letter-spacing: 2px; */
+}
+.question{
+  /* color: rgb(230, 211, 65);
+  font-size: 33px; */
+  display: flex;
+  justify-content: center;
+  margin: 5.2px 0 0 0;
+}
+#toggle:checked ~ .nav{
+  opacity:1;
+  transform: translateY(-120%)
+}
+#toggle:checked ~ .button{
+  background: rgb(237, 206, 42);
+  color: rgb(59, 57, 57);
+  box-shadow: 0 0 0 0 transparent;
+}

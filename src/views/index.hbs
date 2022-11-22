@@ -10,7 +10,7 @@
                <p>Aula {{aula_sala}}</p>
                <p>cantidad de equipos {{cantidad_equipos_sala}}</p>
                <select id='hora' class='form-select my-3' name='hora_reserva'>
-                 {{#formatoHoras horas}}
+                 {{#formatoHoras (horaActual horas)}}
                  {{/formatoHoras }}
                </select>
               <!-- <a class="btn btn-primary" href='/equipos/list/{{id_sala}}'>Reservar un equipo</a> -->

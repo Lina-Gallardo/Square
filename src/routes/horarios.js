@@ -11,7 +11,8 @@ router.get('/', async(req,res)=>{
 router.get('/add', async(req,res)=>{
   const salas = await pool.query('SELECT * FROM salas');
   const usuarios = await pool.query('SELECT * FROM user WHERE role_user=?',["Docente"]);
-  res.render('horarios/add', {salas, usuarios})
+  const horario = await helpers.horasClase();
+  res.render('horarios/add', {salas, usuarios, horario})
 });
 router.post('/add', async(req, res)=>{
   const {id_sala, id_user, dia_semana, hora_inicio, hora_fin} = req.body;
@@ -23,7 +24,7 @@ router.post('/add', async(req, res)=>{
       msj = 'Hora reservada con exito';
       form = 'success';
     } catch (e) {
-      msj = e;
+      msj = e.sqlMessage;
       form = 'message';
     }
   }else{
